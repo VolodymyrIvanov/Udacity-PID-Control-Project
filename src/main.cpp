@@ -37,12 +37,12 @@ int main()
   //pid.Init(0.3, .1, 0.004);
   //Improvement to stay on road after fails
   //pid.Init(0.15, .01, 0.01);
-  //Increasing differential coefficient to return after big error
+  //Increasing derivative coefficient to return after big error
   //and decreasing integral coefficient
   //pid.Init(0.15, .001, 1.0);
-  //Increasing differential coefficient again and making integral coefficient equals to 0,
+  //Increasing derivative coefficient again and making integral coefficient equals to 0,
   //because we don't need "historical" errors
-  pid.Init(0.15, .0, 2.3);
+  pid.Init(0.15, .0, 1.9);
   //Result - car stays on track after several loops
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
